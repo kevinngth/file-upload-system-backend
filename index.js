@@ -1,15 +1,21 @@
 const AWS = require("aws-sdk");
 const parseMultipart = require("parse-multipart");
 const util = require("./util");
-import { FILE_UPLOAD_PATH, BUCKET_NAME, S3_SUBFOLDER } from "./config";
+const { FILE_UPLOAD_PATH, BUCKET_NAME, S3_SUBFOLDER } = require("./config");
 
 const s3 = new AWS.S3();
 
+const getBoundary = (body) => {
+  return body.split("\r\n")[0];
+};
+
 const extractFile = (event) => {
-  const boundary = parseMultipart.getBoundary(event.headers["content-type"]);
+  const boundary = getBoundary(event.body);
+  console.log("boundary: ", boundary);
+
   const parts = parseMultipart.Parse(Buffer.from(event.body), boundary);
   // const [{ fileName, data }] = parts;
-  console.log(parts);
+  console.log("parts: ", parts);
   return undefined;
 };
 
