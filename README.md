@@ -14,9 +14,11 @@
 1. Create a `config.js` file that looks like this:
 
    ```js
-   export const FILE_UPLOAD_PATH = "/your-endpoint";
-   export const BUCKET_NAME = "your-aws-s3-bucket-name";
-   export const S3_SUBFOLDER = "your-subfolder";
+   module.exports = {
+     FILE_UPLOAD_PATH: "/your-endpoint",
+     BUCKET_NAME: "your-aws-s3-bucket-name",
+     S3_SUBFOLDER: "your-subfolder",
+   };
    ```
 
 1. Compress the directory into a .zip file. You don't need to include the `layer` subdirectory. Upload the .zip file to AWS Lambda function
