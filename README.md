@@ -1,25 +1,51 @@
-# File Upload System Backend
+# FastAPI Backend
 
-## Set-up
+This project is a FastAPI backend application that serves as an API for a React frontend.
 
-### Layer
+## Prerequisites
 
-1. Run `npm i` from the directory `layer/nodejs`. Compress the `nodejs` directory into a .zip file
-1. Go to AWS Lambda layers and create a new layer
-1. Upload the .zip file to the layer
+- Python 3.10.6
+- pyenv
+- pyenv-virtualenv
 
-### Function
+## Installation
 
-1. Create a new AWS Lambda function
-1. Create a `config.js` file that looks like this:
+### 1. Install pyenv and pyenv-virtualenv
 
-   ```js
-   module.exports = {
-     FILE_UPLOAD_PATH: "/your-endpoint",
-     BUCKET_NAME: "your-aws-s3-bucket-name",
-     S3_SUBFOLDER: "your-subfolder",
-   };
-   ```
+### 2. Install Python 3.10.6 and create a virtual environment
 
-1. Compress the directory into a .zip file. You don't need to include the `layer` subdirectory. Upload the .zip file to AWS Lambda function
-1. Add a layer that you just created to the Lambda function
+```bash
+pyenv install 3.10.6
+pyenv virtualenv 3.10.6 fastapi-env
+```
+
+### 3. Activate the virtual environment
+
+```bash
+pyenv activate fastapi-env
+```
+
+### 4. Install FastAPI and Uvicorn
+
+```bash
+pip install fastapi uvicorn
+```
+
+### 5. Running the Application
+
+1. Navigate to the project directory
+1. Run the FastAPI server:
+
+```bash
+uvicorn main:app --reload
+```
+
+The FastAPI backend will be running on <http://localhost:8000>.
+
+### 6. Deactivating the Virtual Environment
+
+When you're done working on the project, deactivate the virtual environment by running:
+
+```bash
+pyenv deactivate
+```
