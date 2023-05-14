@@ -10,28 +10,28 @@ This project is a FastAPI backend application that serves as an API for a React 
 
 ## Installation
 
-### 1. Install pyenv and pyenv-virtualenv
+1. Install pyenv and pyenv-virtualenv
 
-### 2. Install Python 3.10.6 and create a virtual environment
+1. Install Python 3.10.6 and create a virtual environment
 
-```bash
-pyenv install 3.10.6
-pyenv virtualenv 3.10.6 fastapi-env
-```
+   ```bash
+   pyenv install 3.10.6
+   pyenv virtualenv 3.10.6 fastapi-env
+   ```
 
-### 3. Activate the virtual environment
+1. Activate the virtual environment
 
-```bash
-pyenv activate fastapi-env
-```
+   ```bash
+   pyenv activate fastapi-env
+   ```
 
-### 4. Install FastAPI and Uvicorn
+1. Install dependencies
 
-```bash
-pip install fastapi uvicorn
-```
+   ```bash
+   pip install fastapi uvicorn boto3 python-multipart
+   ```
 
-### 5. Running the Application
+## Running the Application
 
 1. Navigate to the project directory
 1. Run the FastAPI server:
@@ -42,7 +42,7 @@ uvicorn main:app --reload
 
 The FastAPI backend will be running on <http://localhost:8000>.
 
-### 6. Deactivating the Virtual Environment
+## Deactivating the Virtual Environment
 
 When you're done working on the project, deactivate the virtual environment by running:
 
